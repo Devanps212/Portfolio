@@ -1,0 +1,48 @@
+.banner-container {
+    min-height: 100vh;
+    background: url('https://res.cloudinary.com/dlkrxem40/image/upload/v1723130349/others/peakpx_trweob.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.banner {
+    min-height: 100vh;
+    padding: 5rem 1rem;
+}
+
+.profile-image img {
+    border: 5px solid #fff;
+}
+
+.about {
+    background-color: #343a40;
+    border-radius: 0.5rem;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+}
+
+.intro{
+    animation: fadeIn 1s, ease-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        padding: 3rem 1rem; 
+    }
+
+    .about {
+        width: 90%;
+    }
+}
