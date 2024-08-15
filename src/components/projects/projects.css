@@ -1,0 +1,29 @@
+.show-more {
+    position: relative;
+    padding: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 7px;
+  }
+  
+  .show-more::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 7px;
+    margin-top: 12px;
+    background-color: #3498db;
+    transition: background-color 0.3s;
+  }
+  
+  .show-more:hover {
+    background-color: yellow;
+    color: black;
+    border-radius: 8px;
+  }
+  
+  .show-more:hover::after {
+    background-color: transparent; 
+  }

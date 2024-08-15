@@ -27,6 +27,42 @@
     animation: fadeIn 1s, ease-out;
 }
 
+.icon-animation{
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.icon-animation:hover{
+    transform: translateY(-5px);
+}
+
+.typing-animation {
+    display: inline-block;
+    border-right: .15em solid #fff; 
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+  }
+  
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 70%; }
+  }
+  
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
+  }
+  
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 
 
 @keyframes fadeIn{

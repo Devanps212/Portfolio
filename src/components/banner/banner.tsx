@@ -1,5 +1,5 @@
 import './banner.css';
-import { FaLeaf, FaNodeJs, FaReact, FaTerminal } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 
 const Banner = () => {
@@ -15,17 +15,16 @@ const Banner = () => {
             className='rounded-circle shadow-lg border border-light p-1'
           />
         </div>
-        <div className="intro bg-dark text-light border border-light p-4 rounded shadow-lg w-75 w-md-50">
-          <h1 className="display-4 mb-4 text-center">Hi, I'm Devan!</h1>
-          <p className="lead text-center mb-0">
-            Crafting cutting-edge web applications with a passion for 
-            <span className="text-warning me-2"><FaLeaf/> MongoDB</span>,  
-            <span className="text-danger me-2"><FaTerminal/> Express.js</span>,  
-            <span className="text-info me-2" style={{ color: '#61dafb' }}><FaReact/> React.js</span>, 
-            and <span className="text-success me-2"><FaNodeJs/> Node.js</span>. 
-            Let's collaborate and build something extraordinary!
-          </p>
+        <div className="intro bg-dark text-light border border-light p-4 rounded shadow-lg w-50 w-md-25">
+        <h1 className="display-4 mb-4 text-center typing-animation">Hi, I'm Devan. P. S</h1>
+        <div className="icon-container">
+          <span className='mx-2 h3 icon-animation'><FaGithub/></span>
+          <span className='mx-2 h3 icon-animation'><FaLinkedin/></span>
+          <span className='mx-2 h3 icon-animation'><FaYoutube/></span>
+          <span className='mx-2 h3 icon-animation'><FaInstagram/></span>
         </div>
+      </div>
+
 
       </div>
     </div>
