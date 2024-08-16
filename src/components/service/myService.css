@@ -1,0 +1,49 @@
+.custom-card {
+  background: #1c1e2a;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.custom-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  background-color: #3c67e3;
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 20px auto;
+}
+
+.service-icon {
+  color: #fff;
+  font-size: 36px;
+}
+
+.card-title {
+  color: #5ddcff;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.card-text {
+  color: #cfd3e1;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .icon {
+    margin-top: -30px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-icon {
+    font-size: 28px;
+  }
+}

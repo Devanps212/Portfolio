@@ -4,6 +4,9 @@ import Banner from "../banner/banner"
 import AboutMe from "../aboutMe/aboutMe"
 import Skills from '../Skills/skills'
 import Projects from '../projects/projects'
+import Service from '../service/myService'
+import Footer from '../footer/footer'
+import ContactMe from '../contactMe/contactMe'
 
 
 const Home = ()=>{
@@ -14,6 +17,9 @@ const Home = ()=>{
         <AboutMe/>
         <Skills/>
         <Projects/>
+        <Service/>
+        <ContactMe/>
+        <Footer/>
         </>
     )
 }

@@ -4,7 +4,7 @@ import './projects.css'
 const Projects = () => {
     return (
         <div className="container-fluid py-5 px-5">
-            <h3 className="text-end mb-5">Projects</h3>
+            <h3 className="text-start ms-3 mb-5">Projects</h3>
             <div className="contents d-flex justify-content-center align-items-center w-100">
                 <div className="row">
                     <div className="col-md-5 col-12 d-flex justify-content-center align-items-center mb-4 mb-md-0">
@@ -14,6 +14,7 @@ const Projects = () => {
                                 alt="Project Showcase"
                                 className="img-fluid rounded shadow"
                                 width={400}
+                                style={{objectFit:'fill'}}
                             />
                         </div>
                     </div>
