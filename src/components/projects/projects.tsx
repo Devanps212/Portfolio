@@ -1,35 +1,63 @@
-import './projects.css'
-
+import './projects.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+    };
+
+    const images = [
+        { path: "/Screenshot (312).png", link: "https://github.com/Devanps212/OLX__Clone.git" },
+        { path: "/Screenshot (313).png", link: "https://github.com/Devanps212/Netflix_Clone.git" },
+        { path: "/Screenshot (315).png", link: "https://github.com/Devanps212/Movie_Quote_Quiz_Frontend.git" },
+        { path: "/Screenshot (316).png", link: "" },
+        { path: "/Screenshot (318).png", link: "https://github.com/Devanps212/Spictures.io.git" }
+    ];
+
     return (
-        <div className="container-fluid py-5 px-5">
-            <h3 className="text-start ms-3 mb-5">Projects</h3>
-            <div className="contents d-flex justify-content-center align-items-center w-100">
-                <div className="row">
-                    <div className="col-md-5 col-12 d-flex justify-content-center align-items-center mb-4 mb-md-0">
-                        <div className="image-wrapper text-center">
+        <div className='container'>
+            <h3 className='text-center mb-4'>Projects</h3>
+            <div className='row d-flex flex-column justify-content-center align-items-center'>
+                <div className='col-md-10 col-12 main-projects'>
+                    <div className='d-flex justify-content-between'>
+                        <div className='project-image-container'>
                             <img
-                                src="/MixCollage-09-Aug-2024-10-02-PM-456.jpg"
-                                alt="Project Showcase"
-                                className="img-fluid rounded shadow"
-                                width={400}
-                                style={{objectFit:'fill'}}
+                                className='img-fluid object-fit-cover h-100 rounded border'
+                                src="/Screenshot (311).png"
+                                alt="Project 1"
+                            />
+                        </div>
+                        <div className='project-image-container'>
+                            <img
+                                className='img-fluid object-fit-cover h-100 rounded border'
+                                src="/Screenshot (310).png"
+                                alt="Project 2"
                             />
                         </div>
                     </div>
-                    <div className="col-md-7 col-12">
-                        <div className="project-about">
-                            <p className="lead" style={{ textAlign: 'justify' }}>
-                                I have worked on a diverse set of projects, showcasing my ability to develop robust web applications and user-friendly interfaces. My portfolio includes <strong>"Rent a Car,"</strong> an extensive car rental platform that integrates real-time chat functionality, a payment gateway, and various modules for admin, partner, and user interactions. <strong>"Gampro"</strong> is another major project, an e-commerce platform for purchasing games, complete with features like a wishlist, cart, and secure payment integration.
-                                <br /><br />
-                                In addition to these, I have built several clones to sharpen my front-end development skills. I developed an <strong>OLX clone</strong>, focusing on replicating its user interface and functionality for online classifieds. Additionally, I created the <strong>Netflix homepage clone</strong>, <strong>Rockstar homepage clone</strong>, and <strong>Sony Pictures homepage clone</strong>, each capturing the design aesthetics and responsive behavior of these well-known platforms. These projects highlight my proficiency in HTML, CSS, JavaScript, and React, along with my attention to detail and commitment to delivering high-quality web solutions.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center mt-3">
-                        <span style={{cursor:"pointer"}} className="show-more">Show More</span>
-                    </div>
+                </div>
+                <div className='col-md-12 p-0 m-0'>
+                    <Slider {...settings} className='mt-5'>
+                        {images.map((image, index) => (
+                            <Link to={image.link}>
+                                <div key={index} className='image-Content'>
+                                    <img
+                                        className='img-fluid object-fit-cover rounded'
+                                        src={image.path}
+                                        alt={`Project ${index + 1}`}
+                                    />
+                                </div>
+                            </Link>
+                        ))}
+                    </Slider>
                 </div>
             </div>
         </div>

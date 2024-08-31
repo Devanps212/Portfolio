@@ -1,29 +1,81 @@
-.show-more {
-    position: relative;
-    padding: 4px;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 7px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-projects {
+  margin-bottom: 40px;
+}
+
+.project-image-container {
+  flex: 1;
+  max-width: 48%;
+  overflow: hidden;
+  margin: 1%;
+}
+
+.project-image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-image-container img:hover {
+  transform: scale(1.05);
+}
+
+.slick-slide {
+  padding: 0 10px;
+}
+
+.image-Content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-Content img:hover {
+  transform: scale(1.05);
+}
+
+/* Custom styles for the slider arrows */
+.slick-prev, .slick-next {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 20px;
+  color: white;
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
+.slick-list {
+  overflow: hidden;
+  padding: 0 40px;
+}
+
+@media (max-width: 1250px) {
+  .slick-arrow, .slick-next {
+      display: none !important;
   }
-  
-  .show-more::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    border-radius: 7px;
-    margin-top: 12px;
-    background-color: #3498db;
-    transition: background-color 0.3s;
-  }
-  
-  .show-more:hover {
-    background-color: yellow;
-    color: black;
-    border-radius: 8px;
-  }
-  
-  .show-more:hover::after {
-    background-color: transparent; 
-  }
+}
+
