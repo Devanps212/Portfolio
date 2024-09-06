@@ -47,7 +47,7 @@ const Projects = () => {
                 <div className='col-md-12 p-0 m-0'>
                     <Slider {...settings} className='mt-5'>
                         {images.map((image, index) => (
-                            <Link to={image.link}>
+                            <Link to={image.link} key={index}>
                                 <div key={index} className='image-Content'>
                                     <img
                                         className='img-fluid object-fit-cover rounded'

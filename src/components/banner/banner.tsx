@@ -1,3 +1,4 @@
+import { Button } from 'react-bootstrap';
 import './banner.css';
 import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from 'react-icons/fa';
 
@@ -22,6 +23,11 @@ const Banner = () => {
           <span className='mx-2 h3 icon-animation'><FaLinkedin/></span>
           <span className='mx-2 h3 icon-animation'><FaYoutube/></span>
           <span className='mx-2 h3 icon-animation'><FaInstagram/></span>
+        </div>
+        <div>
+          <Button className='mt-3'>
+            Download Resume
+          </Button>
         </div>
       </div>
 
