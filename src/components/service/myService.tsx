@@ -24,8 +24,8 @@ const Service = () => {
     
   return (
     <div className="container-fluid py-5 px-5">
-      <h3 className="text-center ms-2 mb-4">Services</h3>
-      <div className="contents justify-content-center align-items-center w-100">
+      <h3 className="text-center ms-2 mt-4 mb-4">Services</h3>
+      <div className="contents justify-content-center align-items-center w-100 mt-5">
         <div className="row">
             {
                 servicesData.map((data, index)=>(

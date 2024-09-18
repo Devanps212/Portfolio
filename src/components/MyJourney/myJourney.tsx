@@ -32,8 +32,8 @@ const journey = [
 const MyJourney = () => {
     return (
         <div className="container" style={{ marginTop: "50px" }}>
-            <h3 className="text-center mb-4" style={{ fontWeight: 'bold' }}>My Journey</h3>
-            <VerticalTimeline>
+            <h3 className="text-center mb-4">My Journey</h3>
+            <VerticalTimeline className='mt-5'>
                 {journey.map((item, index) => (
                     <VerticalTimelineElement
                         key={index}

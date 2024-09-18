@@ -1,7 +1,7 @@
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import * as yup from 'yup'
 import { formValidation } from "../../interfaces/contactUs";
-
+import emailjs from 'emailjs-com'
 
 
 
@@ -14,6 +14,12 @@ const ContactMe = () => {
         email: "",
         message: ""
     }
+
+    const apiServiceURL = import.meta.env.EMAIL_JS_API_SERVICE
+    const apiPublicKey = import.meta.env.EMAIL_JS_PUBLIC_KEY
+    const templateKey = import.meta.env.EMAIL_JS_TEMPLATE_KEY
+
+    
     
     const validationSchema = yup.object({
         name: yup.string().required('Give a valid name').matches(/^[A-Za-z]+$/, "No digits allowed"),
@@ -21,9 +27,28 @@ const ContactMe = () => {
         message: yup.string().required('Message is required'),
     })
 
-    const handleSubmit = (values: formValidation)=>{
-        console.log(values)
-    }
+    const handleSubmit = (values: formValidation, { resetForm }: { resetForm: () => void }) => {
+
+        console.log(import.meta.env)
+        console.log(apiPublicKey, apiServiceURL, templateKey)
+        const emailValues: Record<string, unknown> = {
+            from_name: values.name,
+            email: values.email,
+            message: values.message
+        };
+
+        emailjs.send(apiServiceURL, templateKey, emailValues, apiPublicKey)
+            .then((response) => {
+                console.log('SUCCESS!', response);
+                alert('Message sent successfully!');
+                resetForm();
+            })
+            .catch((error) => {
+                console.log('FAILED...', error.text);
+                alert('Failed to send message.');
+            });
+    };
+
 
     return (
       <>

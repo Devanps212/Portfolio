@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -78,4 +80,37 @@
       display: none !important;
   }
 }
+
+.project-image-container{
+  display: inline-block;
+}
+
+.overlay-button {
+  bottom: 10%;
+  left: 25%;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-image-container:hover .overlay-button {
+  opacity: 1;
+}
+
+.over-button{
+  color: black;
+  background: linear-gradient(90deg, rgba(203,255,54,1) 0%, rgba(53,254,255,1) 48%, rgba(251,184,156,1) 100%);
+  transition: ease-out 0.3s;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  box-shadow: 5px 5px 12px black;
+}
+
+
+.over-button:hover{
+  background: linear-gradient(190deg, rgba(0,0,0,1) 0%, rgba(14,34,113,1) 48%, rgba(0,0,0,1) 100%);
+  transition: ease-in 0.2s;
+}
+
 
