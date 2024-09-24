@@ -2,7 +2,7 @@ import './aboutMe.css'
 
 const AboutMe = ()=>{
     return(
-        <div className='container-fluid full-content p-3'>
+        <section className='container-fluid full-content p-3' id='aboutMe'>
             <h3 className='text-start ms-5 mb-4'>About Me</h3>
             <div className='row d-flex'>
                 <div className='col-lg-7 col-12'>
@@ -21,7 +21,7 @@ const AboutMe = ()=>{
                         className=''/>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

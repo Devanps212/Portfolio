@@ -9,3 +9,11 @@
     backdrop-filter: blur(22px);
     z-index: -1;
 }
+
+.navbar {
+    font-family: 'Play', sans-serif;
+}
+
+.head{
+    font-weight: 500;
+}

@@ -2,12 +2,15 @@ import { Formik, Form, ErrorMessage, Field } from "formik";
 import * as yup from 'yup'
 import { formValidation } from "../../interfaces/contactUs";
 import emailjs from 'emailjs-com'
-
-
+import { FidgetSpinner } from 'react-loader-spinner'
+import toast from "react-hot-toast";
+import { useState } from "react";
+import './contactMe.css'
 
 
 const ContactMe = () => {
 
+    const [loader, setLoader] = useState(false)
 
     const initialValues : formValidation = {
         name: "",
@@ -15,9 +18,9 @@ const ContactMe = () => {
         message: ""
     }
 
-    const apiServiceURL = import.meta.env.EMAIL_JS_API_SERVICE
-    const apiPublicKey = import.meta.env.EMAIL_JS_PUBLIC_KEY
-    const templateKey = import.meta.env.EMAIL_JS_TEMPLATE_KEY
+    const apiServiceURL = import.meta.env.VITE_EMAIL_JS_API_SERVICE
+    const apiPublicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+    const templateKey = import.meta.env.VITE_EMAIL_JS_TEMPLATE_KEY
 
     
     
@@ -29,30 +32,44 @@ const ContactMe = () => {
 
     const handleSubmit = (values: formValidation, { resetForm }: { resetForm: () => void }) => {
 
-        console.log(import.meta.env)
-        console.log(apiPublicKey, apiServiceURL, templateKey)
+        setLoader(true)
+
         const emailValues: Record<string, unknown> = {
             from_name: values.name,
             email: values.email,
-            message: values.message
+            message: values.message,
         };
 
         emailjs.send(apiServiceURL, templateKey, emailValues, apiPublicKey)
             .then((response) => {
+                setLoader(false)
                 console.log('SUCCESS!', response);
-                alert('Message sent successfully!');
+                toast.success("Message send successfully")
                 resetForm();
             })
             .catch((error) => {
+                setLoader(false)
                 console.log('FAILED...', error.text);
-                alert('Failed to send message.');
+                toast.error('Failed to send message.')
             });
     };
 
 
     return (
-      <>
-        <div className="container-fluid">
+      <>{
+        loader &&(
+            <div className="overlay-loader">
+                <FidgetSpinner
+                height={100}
+                width={100}
+                visible={true}
+                ariaLabel="...Loading"
+                backgroundColor="#ffffff"
+                />
+            </div>
+        )
+      }
+        <section className="container-fluid" id="contactMe">
           <h3 className="text-center mt-5">Contact Me</h3>
           <div className="border border-secondary p-5 m-5 rounded" style={{background: "linear-gradient(190deg, rgba(0,0,0,0.8) 0%, rgba(14,34,113,0.6) 48%, rgba(0,0,0,0.8) 100%)"}}>
             <Formik 
@@ -112,7 +129,7 @@ const ContactMe = () => {
                 </Form>
             </Formik>
           </div>
-        </div>
+        </section>
       </>
     );
   };

@@ -17,7 +17,7 @@ const skills = [
 
 const Skills = () => {
     return (
-        <div className='container-fluid py-5 px-5'>
+        <section className='container-fluid py-5 px-5' id='skills'>
             <h3 className='text-start ms-2 mb-4'>Skills</h3>
             <div className='contents d-flex justify-content-center align-items-center w-100'>
                 <div className="row w-100">
@@ -39,7 +39,7 @@ const Skills = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

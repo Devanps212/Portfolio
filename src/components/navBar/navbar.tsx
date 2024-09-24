@@ -28,15 +28,19 @@ const Nav = ()=>{
             <div className="container-fluid">
                 <div className="d-flex justify-content-evenly align-items-center w-100">
                     <div>
-                        <span className="text-light h4 mb-0">
+                        <span className="text-light head h4 mb-0">
                             Devan. P. S
                         </span>
                     </div>
                     <div>
                         <ul className="text-light list-unstyled d-flex mt-3">
-                            <li className="mx-3">Home</li>
-                            <li className="mx-3">Projects</li>
-                            <li className="mx-3">About Us</li>
+                            <li className="mx-3"><a href='#home' className='text-decoration-none text-light'>Home</a></li>
+                            <li className="mx-3"><a href='#aboutMe' className='text-decoration-none text-light'>About Me</a></li>
+                            <li className="mx-3"><a href='#skills' className='text-decoration-none text-light'>Skills</a></li>
+                            <li className="mx-3"><a href='#projects' className='text-decoration-none text-light'>Projects</a></li>
+                            <li className="mx-3"><a href='#myJourney' className='text-decoration-none text-light'>Journey</a></li>
+                            <li className="mx-3"><a href='#services' className='text-decoration-none text-light'>Services</a></li>
+                            <li className="mx-3"><a href='#contactMe' className='text-decoration-none text-light'>Contact Me</a></li>
                         </ul>
                     </div>
                 </div>

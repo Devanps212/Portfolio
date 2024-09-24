@@ -31,7 +31,7 @@ const journey = [
 
 const MyJourney = () => {
     return (
-        <div className="container" style={{ marginTop: "50px" }}>
+        <section className="container" style={{ marginTop: "50px" }} id='myJourney'>
             <h3 className="text-center mb-4">My Journey</h3>
             <VerticalTimeline className='mt-5'>
                 {journey.map((item, index) => (
@@ -63,7 +63,7 @@ const MyJourney = () => {
                     </VerticalTimelineElement>
                 ))}
             </VerticalTimeline>
-        </div>
+        </section>
     );
 };
 

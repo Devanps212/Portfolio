@@ -24,23 +24,21 @@ const Projects = () => {
     ];
 
     return (
-        <div className='container'>
+        <section className='container' id='projects'>
             <h3 className='text-center mt-3'>Projects</h3>
             <div className='row d-flex flex-column justify-content-center align-items-center mt-5'>
                 <div className='col-md-10 col-12 main-projects'>
                     <div className='d-flex justify-content-between'>
                         <div className='project-image-container position-relative'>
-                            <Link to="fddvfdv">
-                                <img
-                                    className='img-fluid object-fit-cover h-100 rounded border'
-                                    src="/Screenshot (311).png"
-                                    alt="Project 1"
+                            <img
+                                className='img-fluid object-fit-cover h-100 rounded border'
+                                src="/Screenshot (311).png"
+                                alt="Project 1"
                                 />
-                                <div className='overlay-button position-absolute w-50'>
-                                    <Button className='over-button w-100'>GitHub</Button>
-                                    <Button className='over-button w-100'>Live</Button>
-                                </div>
-                            </Link>
+                            <div className='overlay-button position-absolute w-50'>
+                                <Button href='https://github.com/Devanps212/GAMPro.git' target='_blank' rel="noopener noreferrer" className='over-button w-100'>GitHub</Button>
+                                <Button href='https://www.gampro.shop/' target='_blank' rel="noopener noreferrer" className='over-button w-100'>Live</Button>
+                            </div>
                         </div>
                         <div className='project-image-container position-relative'>
                                 <img
@@ -49,8 +47,8 @@ const Projects = () => {
                                 alt="Project 2"
                                 />
                                 <div className='overlay-button position-absolute w-50'>
-                                    <Button href="https://easyrentacar/shop" target="_blank" rel="noopener noreferrer" className='over-button w-100'>GitHub</Button>
-                                    <Button href="https://github.com/easyrentacar/shop" target="_blank" rel="noopener noreferrer" className='over-button w-100'>Live</Button>
+                                    <Button href="https://github.com/Devanps212/RAC-Frontend_.git" target="_blank" rel="noopener noreferrer" className='over-button w-100'>GitHub</Button>
+                                    <Button href="https://easyrentacar/shop" target="_blank" rel="noopener noreferrer" className='over-button w-100'>Live</Button>
                                 </div>
                         </div>
                     </div>
@@ -71,7 +69,7 @@ const Projects = () => {
                     </Slider>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
